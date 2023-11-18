@@ -1,0 +1,42 @@
+# The TLS17 project configuration file
+# This file is used for the database configuration ,Using this configuration file the-
+# -TLS17 algorithm can able store its live candlestick data into database, 
+# which is used trading algorithm to perform live trades using specific strategies.
+
+#----------------------------------------------------------------------------------------
+
+# Auther = Chetan Arvind Londhe
+# Auther Mail = chetanlondhe1112@gmail.com
+# version = 0.1
+
+#----------------------------------------------------------------------------------------
+
+# Database server details
+# user,password,host,port,database
+[db_server]
+user="root"
+#password="Dashboard2023!"
+password="password"
+host="localhost"
+port=3306
+database="dbs_db"
+
+
+# Database tables details
+[db_tables]
+tickers_data_table="tickers_data"
+
+
+#----------------------------------------------------------------------------------------
+
+# How to access TOML file in python
+# import tomllib
+# with open("toml_file_path","rb") as toml:
+#   toml_dict=tomllib.load(toml)
+# print(toml_dict)  # to access whole toml object
+# print(toml_dict["section_name"]["key_name"]["value_location(in integer)"])    # to access single value
+
+#========================================================================================
+# Old version bugs
+[old_version_problems]
+bug="old version 0.0 were facing issues regaring '----' lines these line are not good in toml file,so its updated with # at first location in these lines"

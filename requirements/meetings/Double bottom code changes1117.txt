@@ -1,0 +1,43 @@
+Double botton scan daily program change
+
+- modify double bottom scan program to store trade_token along with scanned stocks
+use this logic 
+df["stock_id"] = df["stock_id"] + "-EQ"
+url = 'https://margincalculator.angelbroking.com/OpenAPI_File/files/OpenAPIScripMaster.json'
+d = requests.get(url).json()
+token_df = pd.DataFrame.from_dict(d)
+
+for i in range(len(df)):
+    # Find the matching token value in the second dataframe based on stock_id
+    token_value = token_df[token_df['symbol'] == df.at[i, 'stock_id']]['token'].values[0]
+    
+    # Assign the token value to the corresponding row in the first dataframe
+    df.at[i, 'trade_token'] = token_value
+
+to calculate the trade token and store in db table along with the stocks list. You will need to use the trade token while placing the order
+
+Double bottom buy program changes
+
+copy these functions from asmita code
+- 
+line 71 to line 302 from angel_session_test_sridharan_tserv.py file
+Loop 167 needs to be modified
+
+For each stock in scanned stocks
+	Get token value for stock id
+	Get ltp from zerodha (line 175)
+	if ltp crosses last_high (retain line 186)
+		Loop thro customers
+			if customerpositions is < 4 and does not contain this stockid
+				place order (angel_place order)
+				order status
+				send message
+				add record to customer poisitions table
+		add place_orders similar to line 202 (to keep track of orders placed)
+	keep line 209
+
+New table
+customerpositions
+columns
+customername
+stockid

@@ -1,0 +1,57 @@
+# The TLS17 project configuration file
+# This file is used for the database configuration ,Using this configuration file the-
+# -TLS17 algorithm can able store its live candlestick data into database, 
+# which is used trading algorithm to perform live trades using specific strategies.
+
+#----------------------------------------------------------------------------------------
+
+# Auther = Chetan Arvind Londhe
+# Auther Mail = chetanlondhe1112@gmail.com
+# version = 0.1
+
+#----------------------------------------------------------------------------------------
+
+# Database server details
+# user,password,host,port,database
+[db_server]
+user="root"
+#password="Dashboard2023!"
+password="password"
+host="localhost"
+port=3306
+database="stocks_algo"
+
+[encrypt_key]
+key = "WwY-G0vI7FhJfdlHcrGH_mZ6O0iaJL0hk5L3C1C6Aag="
+
+# Database tables details
+[db_tables]
+user_table="user"
+dbs_tickers_data_table="dbs_tickers_data"
+dbs_customerpositions_data_table="customerpositions"
+dbs_order_log_table="dbs_order_log"
+
+access_token_table="zerodha_creds"
+asmita_candle_stick_log_table="asmita_candle_stick_log"
+customer_table="customer"
+asmita_entry_conditions="asmita_entryconditions"
+order_log_table="order_log"
+error_log_table="tls_error_log"
+defaults_table="defaults_log"
+
+
+
+
+#----------------------------------------------------------------------------------------
+
+# How to access TOML file in python
+# import tomllib
+# with open("toml_file_path","rb") as toml:
+#   toml_dict=tomllib.load(toml)
+# print(toml_dict)  # to access whole toml object
+# print(toml_dict["section_name"]["key_name"]["value_location(in integer)"])    # to access single value
+
+#========================================================================================
+# Old version bugs
+[old_version_problems]
+bug="old version 0.0 were facing issues regaring '----' lines these line are not good in toml file,so its updated with # at first location in these lines"

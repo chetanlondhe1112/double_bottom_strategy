@@ -1,0 +1,12 @@
+Double Bottom Strategy DB implementation
+
+- Add database support to DB strategy python code
+- The code should retrieve customer data from db as is done for asmita strategy
+- The code should save the daily scanned double bottom stocks in a table
+- The daily buy python code should look for stock entry points depending on the daily scan and buy the appropriate stocks which have crossed the entry point
+- The daily sell code will sell those stocks who have hit the target point or the stop loss point
+- The customers should maintain a margin balance of 100000 Rupees and the code should check the margin balance
+- Each customer will buy a maximum of 4 stocks
+- Once a stock reaches the target point, all the customers who hold that particular stock will sell at that point
+- Once a stock is sold from customer's wallet, then that particular customer will be eligible to buy another stock
+- The UI look and feel will be similar to Asmita strategy 

@@ -1,0 +1,15 @@
+scan daily runs everyday
+
+lsit of stocks
+puts in every csv for every stocks
+we will put it in everyday 
+we have date column
+we will put in table
+
+uptil line 127 everything is stocks
+
+there triger price,
+
+forget about buying and sell
+
+first do ,daily scan and put it in table ,untill line 130
